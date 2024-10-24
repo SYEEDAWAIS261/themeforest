@@ -12,7 +12,41 @@ body {
     margin-right: 0; /* Aakhri item ke liye space na dein */
   }
 
+.h22{
+    font-size: 12vh;
+    font-weight: 700;
+    margin-top: 12vh;
+    color: rgb(20, 11, 11);
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: moveBanner 1s 0.5s forwards;
+}
+@keyframes moveBanner {
+  0% {
+    transform: translateY(40rem) rotateY(-20deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(0);
+    opacity: 1;
+  }
+}
 
+.h44{
+  font-weight: 550;
+  margin-top: 3vh;
+  color: rgb(107, 107, 107);
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
+
+.h111{
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
+.p11{
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
 
   .navbar {
     margin-top: 2vh;
