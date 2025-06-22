@@ -1165,3 +1165,237 @@ a {
   color: white;
 
 }
+
+
+.services-row-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 5vh 5vw;
+}
+
+/* Left side text section */
+.services-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 55%;
+}
+
+.service-item {
+  margin-bottom: 3rem;
+}
+
+.service-item h4 {
+  margin: 0.5rem 0;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-item p {
+  color: gray;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Dot and inner dot styles */
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  display: inline-block;
+  position: relative;
+}
+
+.inner-dot {
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-dot.gray {
+  background-color: #b9b4b4;
+}
+
+.inner-dot.green {
+  background-color: #53a543;
+}
+
+.inner-dot.yellow {
+  background-color: #c4d42d;
+}
+
+.inner-dot.blue {
+  background-color: #4b5eb3;
+}
+
+/* Right side images stacked like cards */
+.services-graph-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 4vh 5vw;
+}
+
+/* Left Side: Graph-style layout */
+.graph-layout {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 55%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  padding: 1rem;
+}
+
+.horizontal-line, .vertical-line {
+  position: absolute;
+  background-color: #ccc;
+  z-index: 1;
+}
+
+.horizontal-line {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-1px);
+}
+
+.vertical-line {
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-1px);
+}
+
+.quadrant {
+  position: relative;
+  padding: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  z-index: 2;
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+}
+
+.quadrant h4 {
+  margin-bottom: 0.6rem;
+  color: #222;
+  font-weight: bold;
+}
+
+.quadrant p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Right Side: Images */
+.services-images {
+  flex: 1;
+  min-width: 300px;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-img-top,
+.service-img-bottom {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-graph-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .graph-layout {
+    max-width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .horizontal-line,
+  .vertical-line {
+    display: none;
+  }
+
+  /* .services-images {
+    max-width: 90%;
+  }
+
+  .service-img-top,
+  .service-img-bottom {
+    width: 100%;
+  } */
+}
+
+.services-images {
+  flex: 1;
+  min-width: 300px;
+  max-width: 40%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+/* Now Image 1 goes UNDER image 2 */
+.service-img-top {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50px;         /* Move down */
+  left: 30px;        /* Move right */
+  z-index: 1;        /* Lower layer */
+}
+
+/* Image 2 stays on top */
+.service-img-bottom {
+  width: 80%;
+  top: 40px;
+  left: 89px;
+  border-radius: 5px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .services-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-img-top,
+  .service-img-bottom {
+    position: static;
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}
+
